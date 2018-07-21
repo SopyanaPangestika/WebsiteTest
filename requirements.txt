@@ -1,0 +1,4 @@
+robotframework==3.0.2
+robotframework-extendedselenium2library
+robotframework-selenium2library==1.8.0
+selenium==3.0.2

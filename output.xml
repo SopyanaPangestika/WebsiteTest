@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180721 19:09:23.741" generator="Robot 3.0.4 (Python 2.7.13 on darwin)">
+<suite source="/Users/sopy/Documents/Workspace/WebTest/destructive" id="s1" name="Destructive">
+<suite source="/Users/sopy/Documents/Workspace/WebTest/destructive/Testcase_AddtoCart.robot" id="s1-s1" name="Testcase AddtoCart">
+<test id="s1-s1-t1" name="Add To Cart without login">
+<kw type="setup" name="Setup Server" library="keywords">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${HOME_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20180721 19:09:23.926" level="INFO">Opening browser 'Chrome' to base url 'http://automationpractice.com'</msg>
+<status status="PASS" endtime="20180721 19:09:37.703" starttime="20180721 19:09:23.925"></status>
+</kw>
+<timeout value="30 seconds"></timeout>
+<status status="PASS" endtime="20180721 19:09:37.703" starttime="20180721 19:09:23.925"></status>
+</kw>
+<kw name="Verify Product info" library="keywords">
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>window.scrollTo(0, 500);</arg>
+</arguments>
+<msg timestamp="20180721 19:09:37.704" level="INFO">Executing JavaScript:
+window.scrollTo(0, 500);</msg>
+<status status="PASS" endtime="20180721 19:09:37.709" starttime="20180721 19:09:37.704"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=//img[@class="img-responsive"]</arg>
+<arg>timeout=3</arg>
+</arguments>
+<status status="PASS" endtime="20180721 19:09:37.727" starttime="20180721 19:09:37.710"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=//a[@title=contains(text(),"Add to cart")]</arg>
+<arg>timeout=5</arg>
+</arguments>
+<status status="PASS" endtime="20180721 19:09:37.743" starttime="20180721 19:09:37.727"></status>
+</kw>
+<status status="PASS" endtime="20180721 19:09:37.743" starttime="20180721 19:09:37.703"></status>
+</kw>
+<kw name="Submit add to cart" library="keywords">
+<kw name="Execute Javascript" library="Selenium2Library">
+<doc>Executes the given JavaScript code.</doc>
+<arguments>
+<arg>$(".img-responsive").mouseover();</arg>
+</arguments>
+<msg timestamp="20180721 19:09:37.744" level="INFO">Executing JavaScript:
+$(".img-responsive").mouseover();</msg>
+<status status="PASS" endtime="20180721 19:09:37.778" starttime="20180721 19:09:37.744"></status>
+</kw>
+<kw name="Click Element" library="Selenium2Library">
+<doc>Click element identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//span[contains(text(),"Add to cart")]</arg>
+</arguments>
+<msg timestamp="20180721 19:09:37.779" level="INFO">Clicking element 'xpath=//span[contains(text(),"Add to cart")]'.</msg>
+<status status="PASS" endtime="20180721 19:09:37.886" starttime="20180721 19:09:37.778"></status>
+</kw>
+<status status="PASS" endtime="20180721 19:09:37.887" starttime="20180721 19:09:37.744"></status>
+</kw>
+<kw name="Verify Product Successfull Added" library="keywords">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=//h2//i[@class="icon-ok"]</arg>
+</arguments>
+<status status="PASS" endtime="20180721 19:09:37.918" starttime="20180721 19:09:37.887"></status>
+</kw>
+<status status="PASS" endtime="20180721 19:09:37.918" starttime="20180721 19:09:37.887"></status>
+</kw>
+<doc>As user, I want to add the product to my cart without login</doc>
+<status status="PASS" endtime="20180721 19:09:37.919" critical="yes" starttime="20180721 19:09:23.924"></status>
+</test>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180721 19:09:38.015" starttime="20180721 19:09:37.920"></status>
+</kw>
+<status status="PASS" endtime="20180721 19:09:38.015" starttime="20180721 19:09:23.777"></status>
+</suite>
+<suite source="/Users/sopy/Documents/Workspace/WebTest/destructive/TestCase_Login.robot" id="s1-s2" name="TestCase Login">
+<test id="s1-s2-t1" name="Login With Account">
+<kw type="setup" name="Open Browser To Login Page" library="keywords">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20180721 19:09:38.029" level="INFO">Opening browser 'Chrome' to base url 'http://automationpractice.com/index.php?controller=my-account'</msg>
+<status status="PASS" endtime="20180721 19:09:49.762" starttime="20180721 19:09:38.029"></status>
+</kw>
+<timeout value="30 seconds"></timeout>
+<status status="PASS" endtime="20180721 19:09:49.762" starttime="20180721 19:09:38.028"></status>
+</kw>
+<kw name="Verify Login and Register Page" library="keywords">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=//form[@id="login_form"]</arg>
+</arguments>
+<status status="PASS" endtime="20180721 19:09:49.787" starttime="20180721 19:09:49.764"></status>
+</kw>
+<status status="PASS" endtime="20180721 19:09:49.788" starttime="20180721 19:09:49.763"></status>
+</kw>
+<kw name="Input Login Username" library="keywords">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//input[@id="email"]</arg>
+<arg>${VALID_EMAIL}</arg>
+</arguments>
+<msg timestamp="20180721 19:09:49.789" level="INFO">Typing text 'sofyanapangestika@gmail.com' into text field 'xpath=//input[@id="email"]'</msg>
+<status status="PASS" endtime="20180721 19:09:50.018" starttime="20180721 19:09:49.789"></status>
+</kw>
+<status status="PASS" endtime="20180721 19:09:50.018" starttime="20180721 19:09:49.788"></status>
+</kw>
+<kw name="Submit Btn Login" library="keywords">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//button[@id="SubmitLogin"]</arg>
+</arguments>
+<msg timestamp="20180721 19:09:50.019" level="INFO">Clicking button 'xpath=//button[@id="SubmitLogin"]'.</msg>
+<status status="PASS" endtime="20180721 19:09:51.278" starttime="20180721 19:09:50.018"></status>
+</kw>
+<status status="PASS" endtime="20180721 19:09:51.278" starttime="20180721 19:09:50.018"></status>
+</kw>
+<kw name="Verify Login Validation" library="keywords">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=//p[contains(text(),"There is 1 error")]</arg>
+</arguments>
+<status status="PASS" endtime="20180721 19:09:51.297" starttime="20180721 19:09:51.280"></status>
+</kw>
+<status status="PASS" endtime="20180721 19:09:51.297" starttime="20180721 19:09:51.279"></status>
+</kw>
+<kw name="Input Login Password" library="keywords">
+<kw name="Input Password" library="Selenium2Library">
+<doc>Types the given password into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//input[@id="passwd"]</arg>
+<arg>${VALID_PASS}</arg>
+</arguments>
+<msg timestamp="20180721 19:09:51.298" level="INFO">Typing password into text field 'xpath=//input[@id="passwd"]'</msg>
+<status status="PASS" endtime="20180721 19:09:51.415" starttime="20180721 19:09:51.297"></status>
+</kw>
+<status status="PASS" endtime="20180721 19:09:51.415" starttime="20180721 19:09:51.297"></status>
+</kw>
+<kw name="Submit Btn Login" library="keywords">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//button[@id="SubmitLogin"]</arg>
+</arguments>
+<msg timestamp="20180721 19:09:51.416" level="INFO">Clicking button 'xpath=//button[@id="SubmitLogin"]'.</msg>
+<status status="PASS" endtime="20180721 19:09:53.041" starttime="20180721 19:09:51.416"></status>
+</kw>
+<status status="PASS" endtime="20180721 19:09:53.041" starttime="20180721 19:09:51.416"></status>
+</kw>
+<kw name="Verify Success Login" library="keywords">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=//p[@class="info-account"][contains(text(),"Welcome to your account.")]</arg>
+<arg>timeout=5</arg>
+<arg>error=Login Not success</arg>
+</arguments>
+<status status="PASS" endtime="20180721 19:09:53.063" starttime="20180721 19:09:53.042"></status>
+</kw>
+<status status="PASS" endtime="20180721 19:09:53.063" starttime="20180721 19:09:53.042"></status>
+</kw>
+<doc>As user, I want to login to the site with exist account and verify the validation form</doc>
+<status status="PASS" endtime="20180721 19:09:53.063" critical="yes" starttime="20180721 19:09:38.028"></status>
+</test>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180721 19:09:53.139" starttime="20180721 19:09:53.064"></status>
+</kw>
+<status status="PASS" endtime="20180721 19:09:53.139" starttime="20180721 19:09:38.020"></status>
+</suite>
+<suite source="/Users/sopy/Documents/Workspace/WebTest/destructive/TestCase_Register.robot" id="s1-s3" name="TestCase Register">
+<test id="s1-s3-t1" name="Register With Account">
+<kw type="setup" name="Open Browser To Login Page" library="keywords">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${LOGIN_URL}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20180721 19:09:53.161" level="INFO">Opening browser 'Chrome' to base url 'http://automationpractice.com/index.php?controller=my-account'</msg>
+<status status="PASS" endtime="20180721 19:10:03.239" starttime="20180721 19:09:53.160"></status>
+</kw>
+<timeout value="30 seconds"></timeout>
+<status status="PASS" endtime="20180721 19:10:03.240" starttime="20180721 19:09:53.159"></status>
+</kw>
+<kw name="Verify Login and Register Page" library="keywords">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=//form[@id="login_form"]</arg>
+</arguments>
+<status status="PASS" endtime="20180721 19:10:03.256" starttime="20180721 19:10:03.241"></status>
+</kw>
+<status status="PASS" endtime="20180721 19:10:03.256" starttime="20180721 19:10:03.240"></status>
+</kw>
+<kw name="Input Existing Email Address" library="keywords">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//input[@id="email_create"]</arg>
+<arg>${VALID_EMAIL}</arg>
+</arguments>
+<msg timestamp="20180721 19:10:03.257" level="INFO">Typing text 'sofyanapangestika@gmail.com' into text field 'xpath=//input[@id="email_create"]'</msg>
+<status status="PASS" endtime="20180721 19:10:03.469" starttime="20180721 19:10:03.257"></status>
+</kw>
+<status status="PASS" endtime="20180721 19:10:03.469" starttime="20180721 19:10:03.256"></status>
+</kw>
+<kw name="Submit Create an account btn" library="keywords">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//button[@id="SubmitCreate"]</arg>
+</arguments>
+<msg timestamp="20180721 19:10:03.470" level="INFO">Clicking button 'xpath=//button[@id="SubmitCreate"]'.</msg>
+<status status="PASS" endtime="20180721 19:10:03.572" starttime="20180721 19:10:03.470"></status>
+</kw>
+<status status="PASS" endtime="20180721 19:10:03.572" starttime="20180721 19:10:03.469"></status>
+</kw>
+<kw name="Verify Validation Email Account" library="keywords">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=//li[contains(text(),"this email address has already been registered")]</arg>
+<arg>timeout=3</arg>
+</arguments>
+<status status="PASS" endtime="20180721 19:10:05.275" starttime="20180721 19:10:03.574"></status>
+</kw>
+<status status="PASS" endtime="20180721 19:10:05.275" starttime="20180721 19:10:03.573"></status>
+</kw>
+<kw name="input Email Address" library="keywords">
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//input[@id="email_create"]</arg>
+<arg>${UNREGISTER_EMAIL}</arg>
+</arguments>
+<msg timestamp="20180721 19:10:05.276" level="INFO">Typing text 'sopyana@ymail.com' into text field 'xpath=//input[@id="email_create"]'</msg>
+<status status="PASS" endtime="20180721 19:10:05.382" starttime="20180721 19:10:05.276"></status>
+</kw>
+<status status="PASS" endtime="20180721 19:10:05.383" starttime="20180721 19:10:05.275"></status>
+</kw>
+<kw name="Submit Create an account btn" library="keywords">
+<kw name="Click Button" library="Selenium2Library">
+<doc>Clicks a button identified by `locator`.</doc>
+<arguments>
+<arg>xpath=//button[@id="SubmitCreate"]</arg>
+</arguments>
+<msg timestamp="20180721 19:10:05.384" level="INFO">Clicking button 'xpath=//button[@id="SubmitCreate"]'.</msg>
+<status status="PASS" endtime="20180721 19:10:05.443" starttime="20180721 19:10:05.384"></status>
+</kw>
+<status status="PASS" endtime="20180721 19:10:05.443" starttime="20180721 19:10:05.383"></status>
+</kw>
+<kw name="Verify Form Register Page" library="keywords">
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=//h3[contains(text(),"Your personal information")]</arg>
+<arg>timeout=5</arg>
+</arguments>
+<status status="PASS" endtime="20180721 19:10:08.874" starttime="20180721 19:10:05.444"></status>
+</kw>
+<kw name="Wait Until Page Contains Element" library="Selenium2Library">
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<arguments>
+<arg>xpath=//button[@id="submitAccount"]</arg>
+<arg>timeout=3</arg>
+</arguments>
+<status status="PASS" endtime="20180721 19:10:08.918" starttime="20180721 19:10:08.874"></status>
+</kw>
+<status status="PASS" endtime="20180721 19:10:08.918" starttime="20180721 19:10:05.443"></status>
+</kw>
+<doc>As user, I want to register to the site with new account and verify the validation</doc>
+<status status="PASS" endtime="20180721 19:10:08.918" critical="yes" starttime="20180721 19:09:53.156"></status>
+</test>
+<kw type="teardown" name="Close Browser" library="Selenium2Library">
+<doc>Closes the current browser.</doc>
+<status status="PASS" endtime="20180721 19:10:08.992" starttime="20180721 19:10:08.921"></status>
+</kw>
+<status status="PASS" endtime="20180721 19:10:08.992" starttime="20180721 19:09:53.142"></status>
+</suite>
+<status status="PASS" endtime="20180721 19:10:08.995" starttime="20180721 19:09:23.744"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="3">Critical Tests</stat>
+<stat fail="0" pass="3">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Destructive" pass="3">Destructive</stat>
+<stat fail="0" id="s1-s1" name="Testcase AddtoCart" pass="1">Destructive.Testcase AddtoCart</stat>
+<stat fail="0" id="s1-s2" name="TestCase Login" pass="1">Destructive.TestCase Login</stat>
+<stat fail="0" id="s1-s3" name="TestCase Register" pass="1">Destructive.TestCase Register</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
